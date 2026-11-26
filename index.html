@@ -1,0 +1,2981 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Ns. Fawaid" />
+  <title>Praktik Mandiri Keperawatan — Ns. Ahmad Fawaid</title>
+
+  <!-- Tag SEO Bahasa Indonesia -->
+  <meta name="description" content="Praktik Mandiri Keperawatan Ns. Ahmad Fawaid di Salak Randuagung Lumajang. Melayani pemeriksaan umum, perawatan luka, layanan infus, terapi bekam, dan kunjungan perawatan ke rumah." />
+  <meta name="keywords" content="Fawaid, Ahmad Fawaid, Ns Ahmad Fawaid, Perawat Fawaid, Perawat Lumajang, Perawatan Luka, Layanan Infus, Terapi Bekam, Perawat ke Rumah" />
+  <meta name="author" content="Ns. Ahmad Fawaid" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Pratinjau saat Link Dibagikan -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Praktik Mandiri Keperawatan — Ns. Ahmad Fawaid" />
+  <meta property="og:description" content="Layanan pemeriksaan kesehatan, perawatan luka, infus, terapi bekam, dan kunjungan rumah oleh Ns. Ahmad Fawaid." />
+
+  <!-- Data Terstruktur Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Praktik Mandiri Keperawatan Ns. Ahmad Fawaid",
+    "alternateName": ["Fawaid", "Ns. Ahmad Fawaid", "Perawat Fawaid"],
+    "description": "Layanan pemeriksaan umum, perawatan luka, layanan infus, terapi bekam, dan kunjungan perawatan ke rumah.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Salak, Randuagung, Lumajang",
+      "addressRegion": "Jawa Timur",
+      "addressCountry": "ID"
+    },
+    "medicalSpecialty": "Nursing"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-app: radial-gradient(circle at top left, #0c2d48, #080d17 55%, #05080f 100%);
+      --surface: rgba(15, 23, 42, 0.86);
+      --surface-solid: #0f172a;
+      --surface-elevated: rgba(30, 41, 59, 0.68);
+      --surface-hover: rgba(51, 65, 85, 0.45);
+      --border: rgba(148, 163, 184, 0.16);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --primary: #0ea5e9;
+      --primary-dark: #0284c7;
+      --primary-glow: rgba(14, 165, 233, 0.22);
+      --wa: #22c55e;
+      --wa-dark: #16a34a;
+      --income: #10b981;
+      --income-bg: rgba(16, 185, 129, 0.14);
+      --expense: #f43f5e;
+      --expense-bg: rgba(244, 63, 94, 0.14);
+      --warning: #f59e0b;
+      --warning-bg: rgba(245, 158, 11, 0.15);
+      --shadow: 0 22px 44px -12px rgba(0, 0, 0, 0.58);
+    }
+
+    [data-theme="light"] {
+      --bg-app: linear-gradient(135deg, #f0f9ff 0%, #e2e8f0 100%);
+      --surface: rgba(255, 255, 255, 0.95);
+      --surface-solid: #ffffff;
+      --surface-elevated: #f8fafc;
+      --surface-hover: #f1f5f9;
+      --border: rgba(15, 23, 42, 0.1);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-glow: rgba(2, 132, 199, 0.15);
+      --income: #059669;
+      --income-bg: rgba(5, 150, 105, 0.12);
+      --expense: #e11d48;
+      --expense-bg: rgba(225, 29, 72, 0.12);
+      --warning: #d97706;
+      --warning-bg: rgba(217, 119, 6, 0.12);
+      --shadow: 0 18px 36px -14px rgba(15, 23, 42, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg-app);
+      color: var(--text-primary);
+      padding: 22px 16px 84px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    /* Spanduk Notifikasi Melayang di Bagian Atas Layar */
+    .wa-banner-stack {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 24px);
+      max-width: 430px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 200;
+      pointer-events: none;
+    }
+
+    .wa-push-card {
+      pointer-events: auto;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(34, 197, 94, 0.55);
+      backdrop-filter: blur(16px);
+      color: #f8fafc;
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.65);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      animation: dropBanner 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+      cursor: pointer;
+    }
+
+    .wa-push-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #22c55e, #0ea5e9);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .wa-push-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .wa-push-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: #4ade80;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .wa-push-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .wa-push-text {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      line-height: 1.35;
+    }
+
+    @keyframes dropBanner {
+      from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Navigasi Atas */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      padding: 14px 18px;
+      border-radius: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, #0ea5e9, #10b981);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.15rem;
+      box-shadow: 0 8px 18px rgba(14, 165, 233, 0.28);
+    }
+
+    .brand-title h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .brand-title p {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-nav {
+      position: relative;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 8px 13px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-nav:hover {
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .btn-nav.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .btn-nav.install {
+      background: var(--income-bg);
+      border-color: var(--income);
+      color: var(--income);
+    }
+
+    .notif-badge {
+      background: var(--expense);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 999px;
+      min-width: 18px;
+      text-align: center;
+    }
+
+    /* ================= HALAMAN DEPAN PASIEN ================= */
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--income-bg);
+      color: var(--income);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .dot-live {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--income);
+      box-shadow: 0 0 8px var(--income);
+    }
+
+    .hero-left h2 {
+      font-size: 1.65rem;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-left p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .info-chips {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+    }
+
+    .btn-wa-hero {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      background: linear-gradient(135deg, var(--wa), var(--wa-dark));
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(34, 197, 94, 0.28);
+      transition: transform 0.15s, opacity 0.2s;
+    }
+
+    .btn-wa-hero:hover {
+      opacity: 0.94;
+      transform: translateY(-1px);
+    }
+
+    .btn-register-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(14, 165, 233, 0.28);
+      transition: transform 0.15s, opacity 0.2s;
+    }
+
+    .btn-register-submit:hover {
+      opacity: 0.94;
+      transform: translateY(-1px);
+    }
+
+    .booking-box {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .booking-box h3 {
+      font-size: 1.02rem;
+      margin-bottom: 4px;
+    }
+
+    .booking-box p {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+
+    .ticket-box {
+      margin-top: 12px;
+      background: var(--income-bg);
+      border: 1px solid var(--income);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+      display: none;
+    }
+
+    .ticket-box.called-now {
+      background: rgba(34, 197, 94, 0.26);
+      border: 2px solid #4ade80;
+      animation: pulseCall 1.2s infinite;
+    }
+
+    @keyframes pulseCall {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    .ticket-box strong {
+      display: block;
+      font-size: 1.45rem;
+      color: var(--income);
+      margin: 4px 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .service-card.full-span {
+      grid-column: 1 / -1;
+    }
+
+    .service-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .service-icon {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card h4 {
+      font-size: 0.98rem;
+      margin-bottom: 5px;
+    }
+
+    .service-card p {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background: linear-gradient(135deg, var(--wa), var(--wa-dark));
+      color: #fff;
+      border: none;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 12px 28px rgba(22, 163, 74, 0.42);
+      cursor: pointer;
+      z-index: 40;
+      text-decoration: none;
+    }
+
+    /* ================= PANEL ADMIN PERAWAT ================= */
+    .admin-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 14px 18px;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+
+    .admin-identity {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.85rem;
+    }
+
+    .admin-badge {
+      background: rgba(16, 185, 129, 0.16);
+      color: var(--income);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    .admin-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .month-picker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 12px;
+    }
+
+    .month-picker-box label {
+      margin: 0;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .month-picker-box input[type="month"] {
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      outline: none;
+    }
+
+    /* Daftar Antrean Pasien */
+    .queue-banner {
+      background: var(--surface);
+      border: 1px solid rgba(14, 165, 233, 0.35);
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .queue-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 12px;
+    }
+
+    .queue-card {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .queue-card.called {
+      border-color: var(--warning);
+      background: var(--warning-bg);
+    }
+
+    .queue-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .queue-num {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+
+    .queue-status {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(148, 163, 184, 0.16);
+      color: var(--text-secondary);
+    }
+
+    .queue-card.called .queue-status {
+      background: var(--warning);
+      color: #0f172a;
+    }
+
+    .queue-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .btn-q {
+      flex: 1;
+      border: none;
+      padding: 7px 9px;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .btn-q.call { background: var(--warning); color: #0f172a; }
+    .btn-q.done { background: var(--income); color: #fff; }
+    .btn-q.wa { background: rgba(34, 197, 94, 0.18); color: var(--wa); }
+    .btn-q.cancel { background: rgba(244, 63, 94, 0.16); color: var(--expense); flex: 0; }
+
+    /* Kartu Ringkasan */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .kpi-title {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .kpi-value {
+      font-size: 1.32rem;
+      font-weight: 700;
+    }
+
+    .kpi-sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .text-income { color: var(--income); }
+    .text-expense { color: var(--expense); }
+
+    /* Rincian & Tabel Arsip Bulanan */
+    .recap-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-bottom: 18px;
+    }
+
+    .recap-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .recap-top h3 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .service-breakdown {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 10px;
+    }
+
+    .breakdown-chip {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .breakdown-chip span:first-child {
+      color: var(--text-secondary);
+      max-width: 65%;
+    }
+
+    .breakdown-chip strong {
+      color: var(--income);
+    }
+
+    .archive-table-wrap {
+      overflow-x: auto;
+    }
+
+    .archive-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+    }
+
+    .archive-table th,
+    .archive-table td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .archive-table th {
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+    }
+
+    .archive-table tr:hover td {
+      background: var(--surface-hover);
+    }
+
+    .archive-table tr.active-month-row td {
+      background: rgba(14, 165, 233, 0.12);
+    }
+
+    .tag-period {
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-weight: 700;
+      margin-left: 6px;
+      background: rgba(148, 163, 184, 0.16);
+      color: var(--text-secondary);
+    }
+
+    .tag-period.current {
+      background: var(--income-bg);
+      color: var(--income);
+    }
+
+    .btn-mini {
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 7px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-mini:hover {
+      border-color: var(--primary);
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .tab-btn {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface-elevated);
+      color: var(--text-secondary);
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .tab-btn.active-income {
+      background: var(--income-bg);
+      border-color: var(--income);
+      color: var(--income);
+    }
+
+    .tab-btn.active-expense {
+      background: var(--expense-bg);
+      border-color: var(--expense);
+      color: var(--expense);
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="url"],
+    textarea,
+    select {
+      width: 100%;
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 11px;
+      border: none;
+      border-radius: 11px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+
+    .btn-submit.income { background: linear-gradient(135deg, #10b981, #059669); }
+    .btn-submit.expense { background: linear-gradient(135deg, #f43f5e, #e11d48); }
+    .btn-submit.primary { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
+
+    .filter-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .filter-controls input { flex: 1; min-width: 180px; }
+    .filter-controls select { width: auto; min-width: 155px; }
+
+    .tx-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 540px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .tx-item {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 13px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tx-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .tx-badge-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .tx-badge-icon.income { background: var(--income-bg); color: var(--income); }
+    .tx-badge-icon.expense { background: var(--expense-bg); color: var(--expense); }
+
+    .tx-title {
+      font-size: 0.94rem;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .tx-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .tag {
+      background: rgba(148, 163, 184, 0.12);
+      padding: 2px 7px;
+      border-radius: 5px;
+    }
+
+    .tx-right { text-align: right; flex-shrink: 0; }
+    .tx-amount { font-size: 0.96rem; font-weight: 700; margin-bottom: 5px; }
+
+    .tx-btn-group {
+      display: flex;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+
+    .btn-act {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.73rem;
+      cursor: pointer;
+      padding: 2px 7px;
+      border-radius: 5px;
+    }
+
+    .btn-act:hover {
+      border-color: var(--primary);
+      color: var(--text-primary);
+    }
+
+    .btn-act.del:hover {
+      background: var(--expense-bg);
+      border-color: var(--expense);
+      color: var(--expense);
+    }
+
+    .empty-box {
+      text-align: center;
+      padding: 32px 16px;
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Daftar Notifikasi */
+    .notif-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 360px;
+      overflow-y: auto;
+      margin-bottom: 12px;
+    }
+
+    .notif-item {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--primary);
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+    }
+
+    .notif-item.unread {
+      border-left-color: var(--wa);
+      background: rgba(34, 197, 94, 0.1);
+    }
+
+    .notif-item time {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    /* Jendela Pop-up (Modal) */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.76);
+      backdrop-filter: blur(6px);
+      display: none;
+      place-items: center;
+      padding: 16px;
+      z-index: 60;
+    }
+
+    .modal-backdrop.open { display: grid; }
+
+    .modal-box {
+      width: 100%;
+      max-width: 450px;
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-box h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .modal-box p { font-size: 0.83rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5; }
+
+    .qr-preview-box {
+      background: #ffffff;
+      padding: 16px;
+      border-radius: 14px;
+      text-align: center;
+      margin: 12px 0;
+      color: #0f172a;
+    }
+
+    .qr-preview-box img {
+      width: 210px;
+      height: 210px;
+      display: block;
+      margin: 0 auto 8px;
+    }
+
+    .qr-preview-box strong {
+      display: block;
+      font-size: 0.92rem;
+    }
+
+    .qr-preview-box span {
+      font-size: 0.75rem;
+      color: #475569;
+    }
+
+    .install-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .install-steps li {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 840px) {
+      .hero-card, .main-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .kpi-grid { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      body { background: #fff; color: #000; padding: 0; }
+      .navbar, .admin-toolbar, .queue-banner, .panel:first-child, .filter-controls, .tx-btn-group, .wa-float, .btn-mini, .wa-banner-stack { display: none !important; }
+      .main-grid { grid-template-columns: 1fr; }
+      .kpi-card, .recap-banner, .panel, .admin-header-bar { border: 1px solid #ccc; box-shadow: none; background: #fff; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Spanduk Notifikasi Masuk Gaya WhatsApp -->
+  <div class="wa-banner-stack" id="wa-banner-stack"></div>
+
+  <div class="container">
+    <!-- Navigasi Utama -->
+    <header class="navbar">
+      <div class="brand">
+        <div class="brand-avatar">AF</div>
+        <div class="brand-title">
+          <h1 id="nav-nurse-name">Ns. Ahmad Fawaid</h1>
+          <p id="nav-subtitle">Praktik Mandiri Keperawatan & Kunjungan Rumah</p>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <button type="button" class="btn-nav" id="btn-notif-bell" style="display: none;">
+          🔔 Notifikasi <span class="notif-badge" id="notif-count">0</span>
+        </button>
+        <button type="button" class="btn-nav install" id="btn-install-app">📲 Pasang Aplikasi</button>
+        <button type="button" class="btn-nav" id="btn-theme">◐ Tema</button>
+        <button type="button" class="btn-nav primary" id="btn-mode-switch">🔐 Admin Perawat</button>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         TAMPILAN 1: HALAMAN DEPAN PASIEN (PUBLIK)
+         ========================================================= -->
+    <div id="public-view">
+      <section class="hero-card">
+        <div class="hero-left">
+          <div class="status-pill">
+            <span class="dot-live"></span>
+            <span>Menerima Pemeriksaan & Panggilan ke Rumah</span>
+          </div>
+          <h2>Layanan Kesehatan & Perawatan Profesional</h2>
+          <p>
+            Ditangani langsung oleh <strong id="hero-nurse-name">Ns. Ahmad Fawaid</strong>. Melayani pemeriksaan kesehatan umum,
+            perawatan luka, layanan infus, terapi bekam, cek laboratorium dasar, hingga kunjungan perawatan ke rumah pasien.
+          </p>
+          <div class="info-chips">
+            <div>🕒 <strong>Jam Praktik:</strong> <span id="display-hours">Setiap Hari, 07.00 – 21.00 WIB</span></div>
+            <div>📍 <strong>Lokasi:</strong> <span id="display-address">Salak, Randuagung, Lumajang</span></div>
+            <div>🎫 <strong>Antrean Saat Ini:</strong> <span id="public-queue-info">0 pasien dalam antrean</span></div>
+          </div>
+          <a href="#" target="_blank" rel="noopener" class="btn-wa-hero" id="btn-direct-wa">
+            💬 Tanya via WhatsApp
+          </a>
+        </div>
+
+        <!-- Formulir Pendaftaran Pemeriksaan (Langsung Masuk Sistem Admin Tanpa Kirim WA) -->
+        <div class="booking-box">
+          <h3>Daftar Periksa / Konsultasi</h3>
+          <p>Isi data pendaftaran di bawah ini untuk mendapatkan nomor antrean dan notifikasi panggilan langsung di HP Anda.</p>
+          <form id="patient-register-form">
+            <div class="form-group">
+              <label for="pt-name">Nama Pasien *</label>
+              <input type="text" id="pt-name" placeholder="Masukkan nama lengkap" required />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pt-phone">Nomor HP / WhatsApp</label>
+                <input type="tel" id="pt-phone" placeholder="0812..." />
+              </div>
+              <div class="form-group">
+                <label for="pt-age">Usia / Alamat Singkat</label>
+                <input type="text" id="pt-age" placeholder="Contoh: 35 th / Salak" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="pt-service">Kebutuhan Layanan *</label>
+              <select id="pt-service">
+                <option value="Pemeriksaan Umum & Cek Tensi (TTV)">Pemeriksaan Umum & Cek Tensi (TTV)</option>
+                <option value="Perawatan Luka / Ganti Verban">Perawatan Luka / Ganti Verban</option>
+                <option value="Layanan Infus (Pemasangan / Pelepasan Infus)">Layanan Infus (Pemasangan / Pelepasan Infus)</option>
+                <option value="Terapi Bekam (Hijamah)">Terapi Bekam (Hijamah)</option>
+                <option value="Cek Gula Darah / Kolesterol / Asam Urat">Cek Gula Darah / Kolesterol / Asam Urat</option>
+                <option value="Terapi Uap / Nebulizer">Terapi Uap / Nebulizer</option>
+                <option value="Panggilan Perawat ke Rumah">Panggilan Perawat ke Rumah</option>
+                <option value="Konsultasi Kesehatan Lainnya">Konsultasi Kesehatan Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pt-complaint">Keluhan / Rencana Jam Datang</label>
+              <textarea id="pt-complaint" rows="2" placeholder="Contoh: Mau periksa sore ini jam 16.00 / keluhan demam..."></textarea>
+            </div>
+            <button type="submit" class="btn-register-submit">
+              ✓ Daftar Antrean Periksa
+            </button>
+          </form>
+
+          <!-- Kartu Nomor Antrean Pasien (Berubah Otomatis Saat Dipanggil Admin) -->
+          <div class="ticket-box" id="ticket-box">
+            <span id="ticket-status-label" style="font-size: 0.78rem; color: var(--income); font-weight: 700;">Pendaftaran Berhasil Masuk ke Admin!</span>
+            <strong id="ticket-number">A-01</strong>
+            <span id="ticket-detail" style="font-size: 0.78rem; color: var(--text-secondary);">Biarkan halaman ini terbuka di HP Anda agar panggilan masuk otomatis.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Daftar Layanan Unggulan -->
+      <section class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🩺</div>
+          <h4>Pemeriksaan Umum & TTV</h4>
+          <p>Pemeriksaan tekanan darah, suhu tubuh, saturasi oksigen, konsultasi keluhan ringan, dan pemberian terapi.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🩹</div>
+          <h4>Perawatan Luka</h4>
+          <p>Perawatan luka diabetes, luka pasca operasi, luka bakar, dan ganti verban steril agar cepat pulih.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💧</div>
+          <h4>Layanan Infus</h4>
+          <p>Pemasangan, pelepasan, serta pemantauan terapi cairan maupun vitamin infus dengan alat steril dan aman.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🩸</div>
+          <h4>Terapi Bekam</h4>
+          <p>Layanan terapi bekam kering maupun bekam basah (hijamah) secara higienis dan steril untuk membantu menjaga kebugaran tubuh.</p>
+        </div>
+        <div class="service-card full-span">
+          <div class="service-icon">🏠</div>
+          <h4>Layanan Kunjungan ke Rumah</h4>
+          <p>Kunjungan perawatan langsung ke rumah pasien untuk pemasangan infus, perawatan luka, terapi bekam, cek lab darah, maupun kontrol rutin.</p>
+        </div>
+      </section>
+
+      <a href="#" target="_blank" rel="noopener" class="wa-float" id="btn-float-wa">
+        💬 Tanya Ns. Ahmad Fawaid
+      </a>
+    </div>
+
+    <!-- =========================================================
+         TAMPILAN 2: PANEL ADMIN & REKAP BULANAN (KHUSUS PERAWAT)
+         ========================================================= -->
+    <div id="admin-view" style="display: none;">
+      <div class="admin-header-bar">
+        <div class="admin-identity">
+          <span class="admin-badge">✓ DATABASE CLOUD FIREBASE AKTIF</span>
+          <span>Admin: <strong id="admin-active-name">Ns. Ahmad Fawaid</strong> • Tersimpan Permanen</span>
+        </div>
+        <div class="nav-actions">
+          <button type="button" class="btn-mini" id="btn-enable-push">🔔 Aktifkan Notif HP (Seperti WA)</button>
+          <button type="button" class="btn-mini" id="btn-test-push">📢 Uji Notifikasi</button>
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">
+            Total Semua Waktu: <strong id="alltime-patients" style="color: var(--text-primary);">0 Pasien</strong> |
+            Saldo: <strong id="alltime-net" class="text-income">Rp 0</strong>
+          </span>
+        </div>
+      </div>
+
+      <!-- Antrean Pendaftaran Pasien Masuk -->
+      <section class="queue-banner">
+        <div class="recap-top">
+          <h3>📢 Antrean Pendaftaran Pasien Masuk (<span id="queue-badge-count">0</span> Menunggu)</h3>
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Tekan Panggil untuk mengirim panggilan & suara ke HP pasien, lalu Selesai untuk isi tarif manual</span>
+        </div>
+        <div class="queue-list" id="queue-list"></div>
+      </section>
+
+      <div class="admin-toolbar">
+        <div class="month-picker-box">
+          <label for="month-selector">📅 Pilih Bulan Laporan:</label>
+          <input type="month" id="month-selector" />
+        </div>
+
+        <div class="nav-actions">
+          <button type="button" class="btn-nav" id="btn-qr-modal">📱 Kode QR Pendaftaran</button>
+          <button type="button" class="btn-nav" id="btn-settings">⚙️ Pengaturan Admin</button>
+          <button type="button" class="btn-nav" id="btn-print">🖨️ Cetak Laporan</button>
+          <button type="button" class="btn-nav" id="btn-export-csv">📊 Unduh Excel</button>
+          <button type="button" class="btn-nav" id="btn-backup">↓ Cadangkan</button>
+          <button type="button" class="btn-nav" id="btn-restore">↑ Pulihkan</button>
+          <input type="file" id="file-restore" accept=".json" hidden />
+        </div>
+      </div>
+
+      <!-- Ringkasan Bulan Terpilih -->
+      <section class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-title"><span>Pasien Bulan Ini</span><span>🩺</span></div>
+          <div class="kpi-value" id="kpi-patients">0 Orang</div>
+          <div class="kpi-sub" id="kpi-avg">Rata-rata Rp 0 / pasien</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title"><span>Pemasukan Sebulan</span><span>↗</span></div>
+          <div class="kpi-value text-income" id="kpi-income">Rp 0</div>
+          <div class="kpi-sub" id="kpi-month-label">Periode bulan terpilih</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title"><span>Pengeluaran Obat & Alkes</span><span>↘</span></div>
+          <div class="kpi-value text-expense" id="kpi-expense">Rp 0</div>
+          <div class="kpi-sub">Belanja obat, alkes & operasional</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title"><span>Pendapatan Bersih</span><span>💰</span></div>
+          <div class="kpi-value" id="kpi-balance">Rp 0</div>
+          <div class="kpi-sub" id="kpi-status">Total bersih akhir bulan</div>
+        </div>
+      </section>
+
+      <!-- Rincian Pendapatan per Layanan -->
+      <section class="recap-banner">
+        <div class="recap-top">
+          <h3>Rincian Pemasukan per Layanan (<span id="recap-month-title"></span>)</h3>
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Otomatis terakumulasi selama 1 bulan</span>
+        </div>
+        <div class="service-breakdown" id="service-breakdown"></div>
+      </section>
+
+      <!-- Pencatatan Manual & Riwayat Bulan Terpilih -->
+      <div class="main-grid" style="margin-bottom: 20px;">
+        <section class="panel">
+          <div class="form-tabs">
+            <button type="button" class="tab-btn active-income" id="tab-income">+ Catat Pasien</button>
+            <button type="button" class="tab-btn" id="tab-expense">- Pengeluaran Obat/Alkes</button>
+          </div>
+
+          <form id="form-income">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inc-patient">Nama Pasien *</label>
+                <input type="text" id="inc-patient" placeholder="Contoh: Tn. Budi" required />
+              </div>
+              <div class="form-group">
+                <label for="inc-age">Usia / Alamat</label>
+                <input type="text" id="inc-age" placeholder="Contoh: 38 th" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inc-service">Tindakan Keperawatan *</label>
+              <select id="inc-service">
+                <option value="Pemeriksaan Umum & TTV">Pemeriksaan Umum & TTV</option>
+                <option value="Perawatan Luka / Ganti Verban">Perawatan Luka / Ganti Verban</option>
+                <option value="Layanan Infus (Pemasangan / Lepas)">Layanan Infus (Pemasangan / Lepas)</option>
+                <option value="Terapi Bekam (Hijamah)">Terapi Bekam (Hijamah)</option>
+                <option value="Cek Gula / Kolesterol / Asam Urat">Cek Gula / Kolesterol / Asam Urat</option>
+                <option value="Terapi Uap / Nebulizer">Terapi Uap / Nebulizer</option>
+                <option value="Injeksi / Tindakan Medis">Injeksi / Tindakan Medis</option>
+                <option value="Kunjungan Rumah">Kunjungan Rumah</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="inc-amount">Tarif Periksa Manual (Rp — Minimal 10.000 ke atas) *</label>
+              <input
+                type="text"
+                id="inc-amount"
+                inputmode="numeric"
+                class="rupiah-input"
+                placeholder="Ketik manual, contoh: 25.000"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inc-method">Pembayaran</label>
+                <select id="inc-method">
+                  <option value="Tunai">Tunai</option>
+                  <option value="QRIS">QRIS</option>
+                  <option value="Transfer">Transfer</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="inc-date">Tanggal Periksa</label>
+                <input type="date" id="inc-date" required />
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit income">Simpan Data Pasien</button>
+          </form>
+
+          <form id="form-expense" style="display: none;">
+            <div class="form-group">
+              <label for="exp-title">Rincian Pembelanjaan Obat / Keperluan *</label>
+              <input type="text" id="exp-title" placeholder="Contoh: Beli Paracetamol, Amoxicillin, Kasa & Infus" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="exp-category">Kategori Pengeluaran</label>
+                <select id="exp-category">
+                  <option value="Pembelanjaan Obat-obatan">Pembelanjaan Obat-obatan</option>
+                  <option value="Alkes & BHP (Infus/Bekam/Kasa)">Alkes & BHP (Infus/Bekam/Kasa)</option>
+                  <option value="Operasional Praktik">Operasional Praktik</option>
+                  <option value="Transport Kunjungan Rumah">Transport Kunjungan Rumah</option>
+                  <option value="Lain-lain">Lain-lain</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exp-amount">Nominal Belanja (Rp) *</label>
+                <input
+                  type="text"
+                  id="exp-amount"
+                  inputmode="numeric"
+                  class="rupiah-input"
+                  placeholder="Ketik nominal, misal: 150.000"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="exp-date">Tanggal Pengeluaran</label>
+              <input type="date" id="exp-date" required />
+            </div>
+
+            <button type="submit" class="btn-submit expense">Simpan Pengeluaran</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <div class="recap-top">
+            <h3>Data Pasien & Pengeluaran (<span id="list-month-title"></span>)</h3>
+            <span id="record-count" style="font-size: 0.8rem; color: var(--text-secondary);">0 data</span>
+          </div>
+
+          <div class="filter-controls">
+            <input type="text" id="search-input" placeholder="Cari nama pasien, obat, atau tindakan..." />
+            <select id="type-filter">
+              <option value="all">Semua Catatan</option>
+              <option value="income">Pasien & Pemasukan</option>
+              <option value="expense">Pengeluaran Obat/Alkes</option>
+            </select>
+          </div>
+
+          <ul class="tx-list" id="tx-list"></ul>
+        </section>
+      </div>
+
+      <!-- Arsip Riwayat Laporan Per Bulan -->
+      <section class="recap-banner">
+        <div class="recap-top">
+          <h3>📚 Data Pasien Bulan Lalu & Arsip Laporan Per Bulan</h3>
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Otomatis terpisah per bulan & tersimpan permanen</span>
+        </div>
+        <div class="archive-table-wrap">
+          <table class="archive-table">
+            <thead>
+              <tr>
+                <th>Periode Bulan</th>
+                <th>Jumlah Pasien</th>
+                <th>Pemasukan</th>
+                <th>Pengeluaran</th>
+                <th>Pendapatan Bersih</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="archive-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Jendela Selesaikan Antrean & Isi Tarif Manual -->
+  <div class="modal-backdrop" id="finish-queue-modal">
+    <div class="modal-box">
+      <h3>Selesai Periksa & Isi Tarif</h3>
+      <p>Ketik tarif pemeriksaan secara manual untuk pasien <strong id="fq-patient-label"></strong> (minimal Rp 10.000 ke atas):</p>
+      <form id="finish-queue-form">
+        <input type="hidden" id="fq-id" />
+        <div class="form-group">
+          <label for="fq-service">Tindakan Keperawatan</label>
+          <input type="text" id="fq-service" required />
+        </div>
+        <div class="form-group">
+          <label for="fq-amount">Tarif Periksa Manual (Rp — Minimal 10.000) *</label>
+          <input
+            type="text"
+            id="fq-amount"
+            inputmode="numeric"
+            class="rupiah-input"
+            placeholder="Ketik tarif manual, contoh: 25.000"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="fq-method">Metode Pembayaran</label>
+          <select id="fq-method">
+            <option value="Tunai">Tunai</option>
+            <option value="QRIS">QRIS</option>
+            <option value="Transfer">Transfer</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-nav" id="btn-close-fq">Batal</button>
+          <button type="submit" class="btn-nav primary">Simpan ke Pemasukan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Jendela Pusat Notifikasi Admin -->
+  <div class="modal-backdrop" id="notif-modal">
+    <div class="modal-box">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+        <h3 style="margin:0;">🔔 Notifikasi Masuk Admin</h3>
+        <button type="button" class="btn-mini" id="btn-clear-notifs">Bersihkan</button>
+      </div>
+      <p>Riwayat pendaftaran pasien baru, panggilan antrean, pemasukan, dan pengeluaran:</p>
+      <ul class="notif-list" id="notif-list"></ul>
+      <div class="modal-actions">
+        <button type="button" class="btn-nav primary" id="btn-close-notif">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jendela Kode QR Pendaftaran Pasien -->
+  <div class="modal-backdrop" id="qr-modal">
+    <div class="modal-box">
+      <h3>Kode QR Pendaftaran Pasien</h3>
+      <p>Pasien cukup memindai Kode QR ini untuk membuka halaman praktik dan langsung mendaftar:</p>
+      <div class="form-group">
+        <label for="qr-url-input">Alamat Tautan Situs Permanen</label>
+        <input type="url" id="qr-url-input" />
+      </div>
+      <div class="qr-preview-box">
+        <img id="qr-image" alt="Kode QR Pendaftaran" />
+        <strong>Pindai untuk Daftar Periksa</strong>
+        <span>Praktik Mandiri Ns. Ahmad Fawaid</span>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn-nav" id="btn-close-qr">Tutup</button>
+        <button type="button" class="btn-nav primary" id="btn-download-qr">↓ Unduh Gambar QR</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jendela Ubah Data Transaksi -->
+  <div class="modal-backdrop" id="edit-tx-modal">
+    <div class="modal-box">
+      <h3>Ubah Catatan Transaksi</h3>
+      <form id="edit-tx-form">
+        <input type="hidden" id="edit-tx-id" />
+        <input type="hidden" id="edit-tx-type" />
+        <div class="form-group">
+          <label for="edit-tx-name" id="edit-tx-name-label">Nama Pasien / Keterangan *</label>
+          <input type="text" id="edit-tx-name" required />
+        </div>
+        <div class="form-group" id="edit-tx-age-group">
+          <label for="edit-tx-age">Usia / Alamat</label>
+          <input type="text" id="edit-tx-age" />
+        </div>
+        <div class="form-group">
+          <label for="edit-tx-category">Tindakan / Kategori</label>
+          <input type="text" id="edit-tx-category" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="edit-tx-amount">Nominal (Rp) *</label>
+            <input type="text" id="edit-tx-amount" inputmode="numeric" class="rupiah-input" required />
+          </div>
+          <div class="form-group" id="edit-tx-method-group">
+            <label for="edit-tx-method">Pembayaran</label>
+            <select id="edit-tx-method">
+              <option value="Tunai">Tunai</option>
+              <option value="QRIS">QRIS</option>
+              <option value="Transfer">Transfer</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="edit-tx-date">Tanggal</label>
+          <input type="date" id="edit-tx-date" required />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-nav" id="btn-close-edit-tx">Batal</button>
+          <button type="submit" class="btn-nav primary">Simpan Perubahan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Jendela Panduan Pasang Aplikasi di PC / HP -->
+  <div class="modal-backdrop" id="install-modal">
+    <div class="modal-box">
+      <h3>Pasang Aplikasi ke Layar Depan</h3>
+      <p>Pasang aplikasi <strong>Ns. Ahmad Fawaid</strong> agar terbuka layar penuh tanpa perlu membuka browser lagi:</p>
+      <ul class="install-steps">
+        <li><strong>💻 Di PC / Laptop (Chrome / Edge):</strong><br/>Klik ikon titik tiga <strong>(⋮)</strong> di pojok kanan atas → pilih <strong>Simpan dan bagikan</strong> → klik <strong>Instal halaman sebagai aplikasi...</strong></li>
+        <li><strong>📱 Di HP Android (Chrome):</strong><br/>Ketuk ikon titik tiga <strong>(⋮)</strong> di pojok kanan atas → pilih <strong>Tambahkan ke layar utama</strong> atau <strong>Instal aplikasi</strong>.</li>
+        <li><strong>🍎 Di iPhone (Safari):</strong><br/>Ketuk ikon <strong>Bagikan</strong> di bagian bawah → pilih <strong>Tambah ke Layar Utama</strong>.</li>
+      </ul>
+      <div class="modal-actions">
+        <button type="button" class="btn-nav primary" id="btn-close-install">Mengerti</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jendela Masuk Admin Perawat -->
+  <div class="modal-backdrop" id="pin-modal">
+    <div class="modal-box">
+      <h3>Masuk Admin Perawat</h3>
+      <p>Khusus <strong>Ns. Ahmad Fawaid</strong>. Masukkan PIN untuk mengakses antrean pasien dan laporan keuangan.</p>
+      <form id="pin-form">
+        <div class="form-group">
+          <label for="pin-input">PIN Keamanan (Standar Awal: 1234)</label>
+          <input type="password" id="pin-input" maxlength="8" placeholder="••••" required />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-nav" id="btn-close-pin">Batal</button>
+          <button type="submit" class="btn-nav primary">Masuk Dasbor</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Jendela Pengaturan Praktik -->
+  <div class="modal-backdrop" id="settings-modal">
+    <div class="modal-box">
+      <h3>Pengaturan Admin & Praktik</h3>
+      <p>Atur identitas admin, nomor WhatsApp praktik, informasi praktik, dan PIN akses.</p>
+      <form id="settings-form">
+        <div class="form-group">
+          <label for="set-name">Nama Admin / Perawat</label>
+          <input type="text" id="set-name" required />
+        </div>
+        <div class="form-group">
+          <label for="set-subtitle">Subjudul / Keterangan Praktik</label>
+          <input type="text" id="set-subtitle" required />
+        </div>
+        <div class="form-group">
+          <label for="set-wa">Nomor WhatsApp Praktik (Contoh: 081234567890)</label>
+          <input type="tel" id="set-wa" required />
+        </div>
+        <div class="form-group">
+          <label for="set-hours">Jam Praktik</label>
+          <input type="text" id="set-hours" required />
+        </div>
+        <div class="form-group">
+          <label for="set-address">Alamat Praktik</label>
+          <input type="text" id="set-address" required />
+        </div>
+        <div class="form-group">
+          <label for="set-pin">PIN Masuk Admin</label>
+          <input type="text" id="set-pin" maxlength="8" required />
+        </div>
+        <div class="form-group">
+          <label for="set-firebase">Tautan Firebase Realtime Database</label>
+          <input type="url" id="set-firebase" required />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-nav" id="btn-close-settings">Batal</button>
+          <button type="submit" class="btn-nav primary">Simpan Pengaturan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // 0. Pesan Validasi Formulir dalam Bahasa Indonesia
+    function attachIndonesianValidation(root = document) {
+      root.querySelectorAll('input, select, textarea').forEach((el) => {
+        el.addEventListener('invalid', () => {
+          if (el.validity.valueMissing) {
+            el.setCustomValidity('Harap isi kolom ini terlebih dahulu.');
+          } else if (el.validity.typeMismatch) {
+            el.setCustomValidity('Format isian belum sesuai.');
+          } else {
+            el.setCustomValidity('Isian tidak valid.');
+          }
+        });
+        el.addEventListener('input', () => el.setCustomValidity(''));
+        el.addEventListener('change', () => el.setCustomValidity(''));
+      });
+    }
+    attachIndonesianValidation();
+
+    // Muat daftar suara perangkat lebih awal
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.getVoices();
+      window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+    }
+
+    // 1. Pembuat Ikon Aplikasi ("AF") & Konfigurasi Aplikasi Layar Penuh
+    let APP_ICON_URL = '';
+    (function setupPWA() {
+      function createAppIcon(size) {
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+
+        const grad = ctx.createLinearGradient(0, 0, size, size);
+        grad.addColorStop(0, '#0ea5e9');
+        grad.addColorStop(1, '#10b981');
+
+        const radius = size * 0.22;
+        ctx.beginPath();
+        ctx.moveTo(radius, 0);
+        ctx.lineTo(size - radius, 0);
+        ctx.quadraticCurveTo(size, 0, size, radius);
+        ctx.lineTo(size, size - radius);
+        ctx.quadraticCurveTo(size, size, size - radius, size);
+        ctx.lineTo(radius, size);
+        ctx.quadraticCurveTo(0, size, 0, size - radius);
+        ctx.lineTo(0, radius);
+        ctx.quadraticCurveTo(0, 0, radius, 0);
+        ctx.closePath();
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = `800 ${Math.round(size * 0.42)}px Inter, Segoe UI, sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('AF', size / 2, size / 2 + size * 0.03);
+
+        return canvas.toDataURL('image/png');
+      }
+
+      const icon192 = createAppIcon(192);
+      const icon512 = createAppIcon(512);
+      APP_ICON_URL = icon192;
+
+      const favicon = document.createElement('link');
+      favicon.rel = 'icon';
+      favicon.type = 'image/png';
+      favicon.href = icon192;
+      document.head.appendChild(favicon);
+
+      const appleIcon = document.createElement('link');
+      appleIcon.rel = 'apple-touch-icon';
+      appleIcon.href = icon192;
+      document.head.appendChild(appleIcon);
+
+      const manifestObj = {
+        name: 'Praktik Mandiri Keperawatan — Ns. Ahmad Fawaid',
+        short_name: 'Ns. Fawaid',
+        description: 'Sistem Praktik Mandiri Keperawatan & Kunjungan Rumah Ns. Ahmad Fawaid',
+        start_url: window.location.href,
+        display: 'standalone',
+        background_color: '#080d17',
+        theme_color: '#0ea5e9',
+        icons: [
+          { src: icon192, sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+          { src: icon512, sizes: '512x512', type: 'image/png', purpose: 'any maskable' }
+        ]
+      };
+
+      const manifestLink = document.createElement('link');
+      manifestLink.rel = 'manifest';
+      manifestLink.href = 'data:application/manifest+json;charset=utf-8,' + encodeURIComponent(JSON.stringify(manifestObj));
+      document.head.appendChild(manifestLink);
+    })();
+
+    // 2. Sistem Notifikasi & Panggilan Suara Fasih Bahasa Indonesia
+    const WhatsAppStyleNotifier = {
+      playDoubleTone() {
+        try {
+          const ctx = new (window.AudioContext || window.webkitAudioContext)();
+          const freqs = [784, 1046.5];
+          freqs.forEach((f, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(f, ctx.currentTime + i * 0.13);
+            gain.gain.setValueAtTime(0.12, ctx.currentTime + i * 0.13);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.13 + 0.32);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(ctx.currentTime + i * 0.13);
+            osc.stop(ctx.currentTime + i * 0.13 + 0.32);
+          });
+        } catch (_) {}
+      },
+
+      async requestPermission() {
+        if (!('Notification' in window)) {
+          this.showTopBanner('Info Perangkat', 'Browser ini tidak mendukung notifikasi bilah status, spanduk layar tetap aktif.');
+          return false;
+        }
+        if (Notification.permission === 'granted') {
+          this.showTopBanner('Notifikasi HP Aktif', 'Notifikasi masuk gaya WhatsApp sudah aktif di perangkat Admin.');
+          return true;
+        }
+        const perm = await Notification.requestPermission();
+        if (perm === 'granted') {
+          this.sendDeviceNotification('Notifikasi HP Aktif', 'Pendaftaran pasien baru akan muncul di bilah notifikasi HP seperti WhatsApp.');
+          return true;
+        } else {
+          this.showTopBanner('Izin Diblokir', 'Aktifkan izin Notifikasi di pengaturan situs browser HP Anda.');
+          return false;
+        }
+      },
+
+      sendDeviceNotification(title, body) {
+        this.playDoubleTone();
+        if ('vibrate' in navigator) {
+          try { navigator.vibrate([220, 100, 220]); } catch (_) {}
+        }
+        this.showTopBanner(title, body);
+
+        if ('Notification' in window && Notification.permission === 'granted') {
+          try {
+            const notif = new Notification(title, {
+              body,
+              icon: APP_ICON_URL,
+              badge: APP_ICON_URL,
+              vibrate: [220, 100, 220],
+              tag: 'fawaid-clinic-alert'
+            });
+            notif.onclick = () => {
+              window.focus();
+              notif.close();
+            };
+          } catch (_) {}
+        }
+      },
+
+      showTopBanner(title, body) {
+        const stack = document.getElementById('wa-banner-stack');
+        const card = document.createElement('div');
+        card.className = 'wa-push-card';
+        card.innerHTML = `
+          <div class="wa-push-icon">AF</div>
+          <div class="wa-push-body">
+            <div class="wa-push-header">
+              <span>NS. AHMAD FAWAID • NOTIFIKASI</span>
+              <span>Baru saja</span>
+            </div>
+            <div class="wa-push-title">${escapeHTML(title)}</div>
+            <div class="wa-push-text">${escapeHTML(body)}</div>
+          </div>
+        `;
+        card.onclick = () => card.remove();
+        stack.appendChild(card);
+        setTimeout(() => card.remove(), 4800);
+      },
+
+      announceQueue(queueNum, patientName) {
+        this.playDoubleTone();
+        const teksPanggilan = `Nomor antrean ${queueNum.replace('-', ' ')}, atas nama ${patientName}, silakan masuk ke ruang periksa.`;
+
+        const putarSuaraOnlineIndo = () => {
+          try {
+            const audio = new Audio(
+              `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=id&q=${encodeURIComponent(teksPanggilan)}`
+            );
+            audio.referrerPolicy = 'no-referrer';
+            audio.play().catch(() => {});
+          } catch (_) {}
+        };
+
+        try {
+          if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const daftarSuara = window.speechSynthesis.getVoices();
+            const suaraIndo = daftarSuara.find(
+              (v) => v.lang.toLowerCase().includes('id') || v.name.toLowerCase().includes('indonesia')
+            );
+
+            if (suaraIndo) {
+              const utter = new SpeechSynthesisUtterance(teksPanggilan);
+              utter.voice = suaraIndo;
+              utter.lang = 'id-ID';
+              utter.rate = 0.95;
+              setTimeout(() => window.speechSynthesis.speak(utter), 380);
+            } else {
+              setTimeout(putarSuaraOnlineIndo, 380);
+            }
+          } else {
+            setTimeout(putarSuaraOnlineIndo, 380);
+          }
+        } catch (_) {
+          setTimeout(putarSuaraOnlineIndo, 380);
+        }
+      }
+    };
+
+    // Format Input Rupiah Manual (Tanpa Panah Naik-Turun)
+    function parseRupiahValue(str) {
+      return Number(String(str || '').replace(/\D/g, '')) || 0;
+    }
+
+    document.addEventListener('input', (e) => {
+      if (e.target.classList.contains('rupiah-input')) {
+        const digits = e.target.value.replace(/\D/g, '');
+        e.target.value = digits ? Number(digits).toLocaleString('id-ID') : '';
+      }
+    });
+
+    // Pasang Aplikasi Handler
+    let deferredInstallPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredInstallPrompt = e;
+    });
+
+    const installModal = document.getElementById('install-modal');
+    document.getElementById('btn-install-app').addEventListener('click', async () => {
+      if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        await deferredInstallPrompt.userChoice;
+        deferredInstallPrompt = null;
+      } else {
+        installModal.classList.add('open');
+      }
+    });
+    document.getElementById('btn-close-install').addEventListener('click', () => installModal.classList.remove('open'));
+
+    // 3. Manajemen Data & Sinkronisasi Permanen ke Firebase Realtime Database
+    const DEFAULT_CONFIG = {
+      nurseName: 'Ns. Ahmad Fawaid',
+      subtitle: 'Praktik Mandiri Keperawatan & Kunjungan Rumah',
+      waNumber: '6281234567890',
+      hours: 'Setiap Hari, 07.00 – 21.00 WIB',
+      address: 'Salak, Randuagung, Lumajang',
+      pin: '1234',
+      firebaseUrl: 'https://praktik-fawaid-default-rtdb.firebaseio.com'
+    };
+
+    class FawaidClinicApp {
+      constructor() {
+        this.records = JSON.parse(localStorage.getItem('fawaid_clinic_records')) || [];
+        this.queue = JSON.parse(localStorage.getItem('fawaid_clinic_queue')) || [];
+        this.notifications = JSON.parse(localStorage.getItem('fawaid_clinic_notifs')) || [];
+        const savedCfg = JSON.parse(localStorage.getItem('fawaid_clinic_config')) || {};
+        this.config = {
+          ...DEFAULT_CONFIG,
+          ...savedCfg,
+          firebaseUrl: savedCfg.firebaseUrl || DEFAULT_CONFIG.firebaseUrl
+        };
+        this.isAdmin = false;
+        this.activePatientTicketId = Number(localStorage.getItem('fawaid_active_ticket_id')) || null;
+        this.patientNotifiedCalled = false;
+        this.currentMonth = new Date().toISOString().slice(0, 7);
+        this.selectedMonth = this.currentMonth;
+        this.typeFilter = 'all';
+        this.searchQuery = '';
+      }
+
+      getDbBase() {
+        return (this.config.firebaseUrl || DEFAULT_CONFIG.firebaseUrl).trim().replace(/\/+$/, '');
+      }
+
+      saveLocalOnly() {
+        localStorage.setItem('fawaid_clinic_records', JSON.stringify(this.records));
+        localStorage.setItem('fawaid_clinic_queue', JSON.stringify(this.queue));
+        localStorage.setItem('fawaid_clinic_notifs', JSON.stringify(this.notifications));
+      }
+
+      saveAll() {
+        this.saveLocalOnly();
+        this.syncCloudPush();
+      }
+
+      saveConfig() {
+        localStorage.setItem('fawaid_clinic_config', JSON.stringify(this.config));
+      }
+
+      async syncCloudPush() {
+        const url = this.getDbBase();
+        if (!url) return;
+        try {
+          await fetch(`${url}/clinicState.json`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              records: this.records,
+              queue: this.queue,
+              notifications: this.notifications
+            })
+          });
+        } catch (_) {}
+      }
+
+      async pushNewBookingToCloud(bookingItem, notifItem) {
+        const url = this.getDbBase();
+        if (!url) return;
+        try {
+          const res = await fetch(`${url}/clinicState.json`);
+          const cloudData = (await res.json()) || {};
+          const cloudQueue = Array.isArray(cloudData.queue) ? cloudData.queue : [];
+          const cloudNotifs = Array.isArray(cloudData.notifications) ? cloudData.notifications : [];
+          const cloudRecords = Array.isArray(cloudData.records) ? cloudData.records : this.records;
+
+          if (!cloudQueue.some((q) => q.id === bookingItem.id)) {
+            cloudQueue.push(bookingItem);
+          }
+          if (!cloudNotifs.some((n) => n.id === notifItem.id)) {
+            cloudNotifs.unshift(notifItem);
+          }
+
+          this.queue = cloudQueue;
+          this.notifications = cloudNotifs.slice(0, 60);
+          this.records = cloudRecords;
+          this.saveLocalOnly();
+
+          await fetch(`${url}/clinicState.json`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              records: this.records,
+              queue: this.queue,
+              notifications: this.notifications
+            })
+          });
+        } catch (_) {
+          this.syncCloudPush();
+        }
+      }
+
+      async syncCloudPull() {
+        const url = this.getDbBase();
+        if (!url) return;
+        try {
+          const res = await fetch(`${url}/clinicState.json`);
+          const data = await res.json();
+          if (data && typeof data === 'object') {
+            const prevIds = new Set(this.queue.map((q) => q.id));
+            if (Array.isArray(data.records)) this.records = data.records;
+            if (Array.isArray(data.queue)) this.queue = data.queue;
+            if (Array.isArray(data.notifications)) this.notifications = data.notifications;
+
+            this.saveLocalOnly();
+
+            // Notifikasi untuk Admin jika ada pendaftaran pasien baru dari HP lain
+            const newlyArrived = this.queue.filter((q) => !prevIds.has(q.id));
+            if (newlyArrived.length > 0 && this.isAdmin) {
+              const latest = newlyArrived[newlyArrived.length - 1];
+              WhatsAppStyleNotifier.sendDeviceNotification(
+                `Pendaftaran Baru (${latest.queueNumber})`,
+                `${latest.patientName} — ${latest.service}${latest.complaint ? ' (' + latest.complaint + ')' : ''}`
+              );
+            }
+
+            if (this.isAdmin) renderAdmin();
+            else syncPublicPortal();
+          }
+        } catch (_) {}
+      }
+
+      pushNotification(title, detail, triggerDevicePush = false, skipCloudSave = false) {
+        const nowStr = new Date().toLocaleString('id-ID', {
+          day: '2-digit',
+          month: 'short',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        const notifObj = {
+          id: Date.now() + Math.floor(Math.random() * 999),
+          title,
+          detail,
+          time: nowStr,
+          read: false
+        };
+        this.notifications.unshift(notifObj);
+        if (this.notifications.length > 60) this.notifications.pop();
+        if (skipCloudSave) this.saveLocalOnly();
+        else this.saveAll();
+        updateNotifBadge();
+        if (triggerDevicePush) {
+          WhatsAppStyleNotifier.sendDeviceNotification(title, detail);
+        }
+        return notifObj;
+      }
+
+      normalizeWA(rawPhone) {
+        let digits = String(rawPhone || '').replace(/\D/g, '');
+        if (digits.startsWith('0')) digits = '62' + digits.slice(1);
+        if (!digits.startsWith('62')) digits = '62' + digits;
+        return digits;
+      }
+
+      getNextQueueCode() {
+        const today = new Date().toISOString().slice(0, 10);
+        const todayQueue = this.queue.filter((q) => q.date === today);
+        const todayDone = this.records.filter((r) => r.type === 'income' && r.date === today && r.fromQueue);
+        const nextNum = todayQueue.length + todayDone.length + 1;
+        return `A-${String(nextNum).padStart(2, '0')}`;
+      }
+
+      getMonthRecords(ym = this.selectedMonth) {
+        return this.records.filter((r) => r.date && r.date.startsWith(ym));
+      }
+    }
+
+    const app = new FawaidClinicApp();
+
+    const formatIDR = (num) =>
+      new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        maximumFractionDigits: 0
+      }).format(num || 0);
+
+    const formatMonthIndo = (ym) => {
+      const [y, m] = ym.split('-');
+      const d = new Date(Number(y), Number(m) - 1, 1);
+      return d.toLocaleDateString('id-ID', { month: 'long', year: 'numeric' });
+    };
+
+    function escapeHTML(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function updateNotifBadge() {
+      const unread = app.notifications.filter((n) => !n.read).length;
+      document.getElementById('notif-count').textContent = unread;
+    }
+
+    // Sinkronisasi Halaman Depan & Status Panggilan ke HP Pasien
+    function syncPublicPortal() {
+      document.getElementById('nav-nurse-name').textContent = app.config.nurseName;
+      document.getElementById('nav-subtitle').textContent = app.config.subtitle;
+      document.getElementById('hero-nurse-name').textContent = app.config.nurseName;
+      document.getElementById('admin-active-name').textContent = app.config.nurseName;
+      document.getElementById('display-hours').textContent = app.config.hours;
+      document.getElementById('display-address').textContent = app.config.address;
+      document.getElementById('public-queue-info').textContent = `${app.queue.length} pasien dalam antrean`;
+
+      const waClean = app.normalizeWA(app.config.waNumber);
+      const greeting = encodeURIComponent(
+        `Halo ${app.config.nurseName}, saya ingin menanyakan informasi layanan kesehatan.`
+      );
+      const directUrl = `https://wa.me/${waClean}?text=${greeting}`;
+      document.getElementById('btn-direct-wa').href = directUrl;
+      document.getElementById('btn-float-wa').href = directUrl;
+
+      // Cek apakah nomor antrean pasien di HP ini sedang dipanggil oleh Admin
+      const ticketBox = document.getElementById('ticket-box');
+      if (app.activePatientTicketId) {
+        const myTicket = app.queue.find((q) => q.id === app.activePatientTicketId);
+        if (myTicket) {
+          ticketBox.style.display = 'block';
+          document.getElementById('ticket-number').textContent = myTicket.queueNumber;
+          if (myTicket.status === 'called') {
+            ticketBox.classList.add('called-now');
+            document.getElementById('ticket-status-label').textContent = '🔊 GILIRAN ANDA DIPANGGIL!';
+            document.getElementById('ticket-detail').textContent =
+              `Atas nama ${myTicket.patientName}, silakan masuk ke ruang periksa ${app.config.nurseName}.`;
+            if (!app.patientNotifiedCalled) {
+              app.patientNotifiedCalled = true;
+              WhatsAppStyleNotifier.sendDeviceNotification(
+                `Giliran Anda Dipanggil (${myTicket.queueNumber})`,
+                `Atas nama ${myTicket.patientName}, silakan masuk ke ruang periksa ${app.config.nurseName}.`
+              );
+              WhatsAppStyleNotifier.announceQueue(myTicket.queueNumber, myTicket.patientName);
+            }
+          } else {
+            ticketBox.classList.remove('called-now');
+            document.getElementById('ticket-status-label').textContent = 'Pendaftaran Berhasil Masuk ke Admin!';
+            document.getElementById('ticket-detail').textContent =
+              `Atas nama ${myTicket.patientName} (${myTicket.service}). Biarkan halaman ini terbuka agar panggilan & suara masuk ke HP Anda.`;
+          }
+        } else {
+          app.activePatientTicketId = null;
+          localStorage.removeItem('fawaid_active_ticket_id');
+          ticketBox.style.display = 'none';
+        }
+      }
+    }
+
+    // Pendaftaran Pasien -> Langsung Masuk Firebase & HP Admin (Tanpa Kirim WA)
+    document.getElementById('patient-register-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('pt-name').value.trim();
+      const phone = document.getElementById('pt-phone').value.trim();
+      const age = document.getElementById('pt-age').value.trim();
+      const service = document.getElementById('pt-service').value;
+      const complaint = document.getElementById('pt-complaint').value.trim();
+      const todayDate = new Date().toISOString().slice(0, 10);
+      const timeNow = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+      const queueCode = app.getNextQueueCode();
+      const newId = Date.now();
+
+      const bookingItem = {
+        id: newId,
+        queueNumber: queueCode,
+        patientName: name,
+        patientPhone: phone,
+        patientAge: age,
+        service,
+        complaint,
+        status: 'waiting',
+        time: timeNow,
+        date: todayDate
+      };
+
+      app.queue.push(bookingItem);
+      app.activePatientTicketId = newId;
+      app.patientNotifiedCalled = false;
+      localStorage.setItem('fawaid_active_ticket_id', String(newId));
+
+      const notifObj = app.pushNotification(
+        `Pasien Baru (${queueCode}): ${name}`,
+        `Layanan: ${service}${complaint ? ' • Keluhan: ' + complaint : ''}`,
+        true,
+        true
+      );
+
+      syncPublicPortal();
+
+      document.getElementById('pt-name').value = '';
+      document.getElementById('pt-phone').value = '';
+      document.getElementById('pt-age').value = '';
+      document.getElementById('pt-complaint').value = '';
+
+      await app.pushNewBookingToCloud(bookingItem, notifObj);
+    });
+
+    // Pergantian Tampilan (Halaman Pasien <-> Admin Perawat)
+    const publicView = document.getElementById('public-view');
+    const adminView = document.getElementById('admin-view');
+    const btnModeSwitch = document.getElementById('btn-mode-switch');
+    const btnNotifBell = document.getElementById('btn-notif-bell');
+    const pinModal = document.getElementById('pin-modal');
+
+    btnModeSwitch.addEventListener('click', () => {
+      if (app.isAdmin) {
+        app.isAdmin = false;
+        adminView.style.display = 'none';
+        btnNotifBell.style.display = 'none';
+        publicView.style.display = 'block';
+        btnModeSwitch.textContent = '🔐 Admin Perawat';
+        syncPublicPortal();
+      } else {
+        document.getElementById('pin-input').value = '';
+        pinModal.classList.add('open');
+        setTimeout(() => document.getElementById('pin-input').focus(), 100);
+      }
+    });
+
+    document.getElementById('btn-close-pin').addEventListener('click', () => pinModal.classList.remove('open'));
+
+    document.getElementById('pin-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (document.getElementById('pin-input').value.trim() === app.config.pin) {
+        app.isAdmin = true;
+        pinModal.classList.remove('open');
+        publicView.style.display = 'none';
+        adminView.style.display = 'block';
+        btnNotifBell.style.display = 'inline-flex';
+        btnModeSwitch.textContent = '← Halaman Pasien';
+        await app.syncCloudPull();
+        renderAdmin();
+
+        const waitingCount = app.queue.length;
+        WhatsAppStyleNotifier.showTopBanner(
+          `Admin ${app.config.nurseName} Aktif`,
+          waitingCount > 0
+            ? `Ada ${waitingCount} pasien menunggu di daftar antrean untuk dipanggil.`
+            : 'Database Firebase aktif. Siap menerima pendaftaran pasien.'
+        );
+      } else {
+        WhatsAppStyleNotifier.showTopBanner('Gagal Masuk', 'PIN yang dimasukkan salah.');
+      }
+    });
+
+    // Tombol Aktifkan & Uji Notifikasi HP
+    document.getElementById('btn-enable-push').addEventListener('click', () => {
+      WhatsAppStyleNotifier.requestPermission();
+    });
+
+    document.getElementById('btn-test-push').addEventListener('click', () => {
+      WhatsAppStyleNotifier.sendDeviceNotification(
+        'Pendaftaran Masuk (A-01)',
+        'Contoh notifikasi pasien baru masuk ke HP Admin Ns. Ahmad Fawaid.'
+      );
+    });
+
+    // Pusat Notifikasi Admin
+    const notifModal = document.getElementById('notif-modal');
+    btnNotifBell.addEventListener('click', () => {
+      app.notifications.forEach((n) => (n.read = true));
+      app.saveAll();
+      updateNotifBadge();
+      renderNotifications();
+      notifModal.classList.add('open');
+    });
+
+    document.getElementById('btn-close-notif').addEventListener('click', () => notifModal.classList.remove('open'));
+    document.getElementById('btn-clear-notifs').addEventListener('click', () => {
+      app.notifications = [];
+      app.saveAll();
+      updateNotifBadge();
+      renderNotifications();
+    });
+
+    function renderNotifications() {
+      const list = document.getElementById('notif-list');
+      list.innerHTML = '';
+      if (app.notifications.length === 0) {
+        list.innerHTML = `<li class="empty-box">Belum ada riwayat notifikasi masuk.</li>`;
+        return;
+      }
+      app.notifications.forEach((n) => {
+        const li = document.createElement('li');
+        li.className = `notif-item ${n.read ? '' : 'unread'}`;
+        li.innerHTML = `
+          <strong>${escapeHTML(n.title)}</strong>
+          <div>${escapeHTML(n.detail)}</div>
+          <time>🕒 ${escapeHTML(n.time)}</time>
+        `;
+        list.appendChild(li);
+      });
+    }
+
+    // Pengaturan Admin & Praktik
+    const settingsModal = document.getElementById('settings-modal');
+    document.getElementById('btn-settings').addEventListener('click', () => {
+      document.getElementById('set-name').value = app.config.nurseName;
+      document.getElementById('set-subtitle').value = app.config.subtitle;
+      document.getElementById('set-wa').value = app.config.waNumber;
+      document.getElementById('set-hours').value = app.config.hours;
+      document.getElementById('set-address').value = app.config.address;
+      document.getElementById('set-pin').value = app.config.pin;
+      document.getElementById('set-firebase').value = app.getDbBase();
+      settingsModal.classList.add('open');
+    });
+
+    document.getElementById('btn-close-settings').addEventListener('click', () => settingsModal.classList.remove('open'));
+
+    document.getElementById('settings-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      app.config.nurseName = document.getElementById('set-name').value.trim() || 'Ns. Ahmad Fawaid';
+      app.config.subtitle = document.getElementById('set-subtitle').value.trim();
+      app.config.waNumber = document.getElementById('set-wa').value.trim();
+      app.config.hours = document.getElementById('set-hours').value.trim();
+      app.config.address = document.getElementById('set-address').value.trim();
+      app.config.pin = document.getElementById('set-pin').value.trim() || '1234';
+      app.config.firebaseUrl = document.getElementById('set-firebase').value.trim() || DEFAULT_CONFIG.firebaseUrl;
+      app.saveConfig();
+      syncPublicPortal();
+      settingsModal.classList.remove('open');
+      WhatsAppStyleNotifier.showTopBanner('Pengaturan Tersimpan', 'Profil praktik & pengaturan admin berhasil diperbarui.');
+    });
+
+    // Pembuat Kode QR
+    const qrModal = document.getElementById('qr-modal');
+    const qrUrlInput = document.getElementById('qr-url-input');
+    const qrImage = document.getElementById('qr-image');
+
+    function updateQRPreview(targetUrl) {
+      const cleanUrl = targetUrl.trim() || window.location.href;
+      qrImage.crossOrigin = 'anonymous';
+      qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=10&data=${encodeURIComponent(cleanUrl)}`;
+    }
+
+    document.getElementById('btn-qr-modal').addEventListener('click', () => {
+      qrUrlInput.value = window.location.href;
+      updateQRPreview(qrUrlInput.value);
+      qrModal.classList.add('open');
+    });
+
+    qrUrlInput.addEventListener('input', () => updateQRPreview(qrUrlInput.value));
+    document.getElementById('btn-close-qr').addEventListener('click', () => qrModal.classList.remove('open'));
+
+    document.getElementById('btn-download-qr').addEventListener('click', () => {
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = 480;
+        canvas.height = 560;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(qrImage, 40, 30, 400, 400);
+        ctx.fillStyle = '#0f172a';
+        ctx.font = 'bold 22px Inter, Segoe UI, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('Pindai untuk Daftar Periksa', 240, 472);
+        ctx.fillStyle = '#0284c7';
+        ctx.font = 'bold 18px Inter, Segoe UI, sans-serif';
+        ctx.fillText(app.config.nurseName, 240, 504);
+        ctx.fillStyle = '#64748b';
+        ctx.font = '14px Inter, Segoe UI, sans-serif';
+        ctx.fillText(app.config.address, 240, 530);
+
+        const link = document.createElement('a');
+        link.download = `Kode-QR-Pendaftaran-${app.config.nurseName.replace(/\s+/g, '-')}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        WhatsAppStyleNotifier.showTopBanner('Kode QR Diunduh', 'Gambar Kode QR pendaftaran siap dicetak.');
+      } catch {
+        window.open(qrImage.src, '_blank');
+      }
+    });
+
+    // Tampilkan Daftar Antrean Pendaftaran Pasien
+    function renderQueue() {
+      const qList = document.getElementById('queue-list');
+      document.getElementById('queue-badge-count').textContent = app.queue.length;
+      qList.innerHTML = '';
+
+      if (app.queue.length === 0) {
+        qList.innerHTML = `<div class="empty-box" style="grid-column: 1 / -1;">Belum ada pasien di daftar antrean masuk. Pendaftaran dari halaman depan akan muncul berurutan di sini.</div>`;
+        return;
+      }
+
+      app.queue.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = `queue-card ${item.status === 'called' ? 'called' : ''}`;
+        const waReplyUrl = item.patientPhone
+          ? `https://wa.me/${app.normalizeWA(item.patientPhone)}?text=${encodeURIComponent(
+              `Halo ${item.patientName}, nomor antrean Anda (${item.queueNumber}) di Praktik ${app.config.nurseName} sudah dipanggil. Silakan masuk.`
+            )}`
+          : null;
+
+        card.innerHTML = `
+          <div>
+            <div class="queue-top">
+              <span class="queue-num">${escapeHTML(item.queueNumber)}</span>
+              <span class="queue-status">${item.status === 'called' ? '🔊 SEDANG DIPANGGIL' : '⏳ MENUNGGU'}</span>
+            </div>
+            <div style="margin-top:8px;">
+              <strong style="font-size:0.96rem;">${escapeHTML(item.patientName)}${item.patientAge ? ` (${escapeHTML(item.patientAge)})` : ''}</strong>
+              <div style="font-size:0.78rem; color:var(--primary); margin-top:2px;">${escapeHTML(item.service)}</div>
+              ${item.complaint ? `<div style="font-size:0.76rem; color:var(--text-secondary); margin-top:4px;">Keluhan: ${escapeHTML(item.complaint)}</div>` : ''}
+              <div style="font-size:0.72rem; color:var(--text-muted); margin-top:4px;">Daftar: ${item.date} • ${item.time}</div>
+            </div>
+          </div>
+          <div class="queue-actions">
+            <button type="button" class="btn-q call" data-action="call" data-id="${item.id}">📢 Panggil</button>
+            <button type="button" class="btn-q done" data-action="finish" data-id="${item.id}">✓ Selesai & Tarif</button>
+            ${waReplyUrl ? `<a href="${waReplyUrl}" target="_blank" rel="noopener" class="btn-q wa">💬 Panggil WA</a>` : ''}
+            <button type="button" class="btn-q cancel" data-action="remove" data-id="${item.id}" title="Batalkan antrean">×</button>
+          </div>
+        `;
+        qList.appendChild(card);
+      });
+    }
+
+    // Aksi Tombol pada Kartu Antrean
+    const finishQueueModal = document.getElementById('finish-queue-modal');
+    document.getElementById('queue-list').addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-action]');
+      if (!btn) return;
+      const id = Number(btn.dataset.id);
+      const action = btn.dataset.action;
+      const qItem = app.queue.find((q) => q.id === id);
+      if (!qItem) return;
+
+      if (action === 'call') {
+        qItem.status = 'called';
+        WhatsAppStyleNotifier.announceQueue(qItem.queueNumber, qItem.patientName);
+        app.pushNotification(
+          `Memanggil Antrean ${qItem.queueNumber}`,
+          `Pasien ${qItem.patientName} dipanggil ke ruang periksa.`,
+          false
+        );
+        WhatsAppStyleNotifier.showTopBanner(`Memanggil ${qItem.queueNumber}`, `Sinyal & suara panggilan dikirim ke HP ${qItem.patientName}`);
+        renderQueue();
+      } else if (action === 'finish') {
+        document.getElementById('fq-id').value = qItem.id;
+        document.getElementById('fq-patient-label').textContent = `${qItem.patientName} (${qItem.queueNumber})`;
+        document.getElementById('fq-service').value = qItem.service;
+        document.getElementById('fq-amount').value = '';
+        finishQueueModal.classList.add('open');
+        setTimeout(() => document.getElementById('fq-amount').focus(), 100);
+      } else if (action === 'remove') {
+        if (confirm(`Hapus ${qItem.patientName} (${qItem.queueNumber}) dari antrean?`)) {
+          app.queue = app.queue.filter((q) => q.id !== id);
+          app.saveAll();
+          renderQueue();
+        }
+      }
+    });
+
+    document.getElementById('btn-close-fq').addEventListener('click', () => finishQueueModal.classList.remove('open'));
+
+    document.getElementById('finish-queue-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const id = Number(document.getElementById('fq-id').value);
+      const amount = parseRupiahValue(document.getElementById('fq-amount').value);
+      if (amount < 10000) {
+        WhatsAppStyleNotifier.showTopBanner('Tarif Belum Sesuai', 'Tarif pemeriksaan minimal Rp 10.000 ke atas.');
+        return;
+      }
+      const qItem = app.queue.find((q) => q.id === id);
+      if (!qItem) return;
+
+      const serviceVal = document.getElementById('fq-service').value.trim();
+      const methodVal = document.getElementById('fq-method').value;
+
+      app.records.unshift({
+        id: Date.now(),
+        type: 'income',
+        patientName: `${qItem.patientName} [${qItem.queueNumber}]`,
+        patientAge: qItem.patientAge || '',
+        service: serviceVal,
+        amount,
+        paymentMethod: methodVal,
+        date: qItem.date,
+        fromQueue: true
+      });
+
+      app.queue = app.queue.filter((q) => q.id !== id);
+      app.selectedMonth = qItem.date.slice(0, 7);
+      document.getElementById('month-selector').value = app.selectedMonth;
+
+      app.pushNotification(
+        `Pemeriksaan Selesai (${qItem.queueNumber})`,
+        `${qItem.patientName} — ${serviceVal} (${formatIDR(amount)})`,
+        true
+      );
+
+      finishQueueModal.classList.remove('open');
+      renderAdmin();
+    });
+
+    // Tampilkan Dasbor & Arsip Bulanan
+    function renderAdmin() {
+      updateNotifBadge();
+      renderQueue();
+
+      const allPatients = app.records.filter((r) => r.type === 'income');
+      const allExpenses = app.records.filter((r) => r.type === 'expense');
+      const allNet =
+        allPatients.reduce((s, r) => s + Number(r.amount || 0), 0) -
+        allExpenses.reduce((s, r) => s + Number(r.amount || 0), 0);
+
+      document.getElementById('alltime-patients').textContent = `${allPatients.length} Pasien`;
+      const allNetEl = document.getElementById('alltime-net');
+      allNetEl.textContent = formatIDR(allNet);
+      allNetEl.className = allNet >= 0 ? 'text-income' : 'text-expense';
+
+      const monthData = app.getMonthRecords();
+      const monthLabel = formatMonthIndo(app.selectedMonth);
+
+      const patients = monthData.filter((r) => r.type === 'income');
+      const expenses = monthData.filter((r) => r.type === 'expense');
+
+      const totalIncome = patients.reduce((s, r) => s + Number(r.amount || 0), 0);
+      const totalExpense = expenses.reduce((s, r) => s + Number(r.amount || 0), 0);
+      const netIncome = totalIncome - totalExpense;
+      const avgPerPatient = patients.length > 0 ? Math.round(totalIncome / patients.length) : 0;
+
+      document.getElementById('kpi-patients').textContent = `${patients.length} Orang`;
+      document.getElementById('kpi-avg').textContent = `Rata-rata ${formatIDR(avgPerPatient)} / pasien`;
+      document.getElementById('kpi-income').textContent = formatIDR(totalIncome);
+      document.getElementById('kpi-month-label').textContent = monthLabel;
+      document.getElementById('kpi-expense').textContent = formatIDR(totalExpense);
+
+      const balEl = document.getElementById('kpi-balance');
+      balEl.textContent = formatIDR(netIncome);
+      balEl.className = `kpi-value ${netIncome >= 0 ? 'text-income' : 'text-expense'}`;
+      document.getElementById('kpi-status').textContent =
+        netIncome >= 0 ? `Pendapatan bersih ${monthLabel}` : `Defisit pada ${monthLabel}`;
+
+      document.getElementById('recap-month-title').textContent = monthLabel;
+      document.getElementById('list-month-title').textContent = monthLabel;
+      const breakdownEl = document.getElementById('service-breakdown');
+      breakdownEl.innerHTML = '';
+
+      if (patients.length === 0) {
+        breakdownEl.innerHTML = `<div style="font-size:0.82rem; color:var(--text-muted);">Belum ada data pemeriksaan pasien pada ${monthLabel}.</div>`;
+      } else {
+        const grouped = {};
+        patients.forEach((p) => {
+          if (!grouped[p.service]) grouped[p.service] = { count: 0, total: 0 };
+          grouped[p.service].count += 1;
+          grouped[p.service].total += Number(p.amount || 0);
+        });
+
+        Object.entries(grouped).forEach(([srv, stat]) => {
+          const chip = document.createElement('div');
+          chip.className = 'breakdown-chip';
+          chip.innerHTML = `
+            <span>${escapeHTML(srv)} (${stat.count}x)</span>
+            <strong>${formatIDR(stat.total)}</strong>
+          `;
+          breakdownEl.appendChild(chip);
+        });
+      }
+
+      const q = app.searchQuery.toLowerCase();
+      const filtered = monthData.filter((r) => {
+        const matchType = app.typeFilter === 'all' || r.type === app.typeFilter;
+        const text = [r.patientName, r.service, r.title, r.category, r.paymentMethod]
+          .filter(Boolean)
+          .join(' ')
+          .toLowerCase();
+        return matchType && text.includes(q);
+      });
+
+      document.getElementById('record-count').textContent = `${filtered.length} catatan`;
+      const listEl = document.getElementById('tx-list');
+      listEl.innerHTML = '';
+
+      if (filtered.length === 0) {
+        listEl.innerHTML = `<li class="empty-box">Tidak ada transaksi ditemukan pada ${monthLabel}.</li>`;
+      } else {
+        filtered.forEach((item) => {
+          const li = document.createElement('li');
+          li.className = 'tx-item';
+          const isIncome = item.type === 'income';
+          const title = isIncome
+            ? `${item.patientName}${item.patientAge ? ` (${item.patientAge})` : ''}`
+            : item.title;
+
+          li.innerHTML = `
+            <div class="tx-left">
+              <div class="tx-badge-icon ${item.type}">${isIncome ? '🩺' : '💊'}</div>
+              <div>
+                <div class="tx-title">${escapeHTML(title)}</div>
+                <div class="tx-meta">
+                  <span class="tag">${escapeHTML(isIncome ? item.service : item.category)}</span>
+                  ${isIncome ? `<span class="tag">${item.paymentMethod}</span>` : ''}
+                  <span>📅 ${item.date}</span>
+                </div>
+              </div>
+            </div>
+            <div class="tx-right">
+              <div class="tx-amount ${isIncome ? 'text-income' : 'text-expense'}">
+                ${isIncome ? '+' : '-'} ${formatIDR(item.amount)}
+              </div>
+              <div class="tx-btn-group">
+                <button type="button" class="btn-act edit" data-id="${item.id}">Ubah</button>
+                <button type="button" class="btn-act del" data-id="${item.id}">Hapus</button>
+              </div>
+            </div>
+          `;
+          listEl.appendChild(li);
+        });
+      }
+
+      renderMonthlyArchive();
+    }
+
+    function renderMonthlyArchive() {
+      const tbody = document.getElementById('archive-tbody');
+      tbody.innerHTML = '';
+
+      const monthSet = new Set([app.currentMonth, app.selectedMonth]);
+      app.records.forEach((r) => {
+        if (r.date && r.date.length >= 7) monthSet.add(r.date.slice(0, 7));
+      });
+
+      const sortedMonths = Array.from(monthSet).sort((a, b) => b.localeCompare(a));
+
+      sortedMonths.forEach((ym) => {
+        const recs = app.getMonthRecords(ym);
+        const pts = recs.filter((r) => r.type === 'income');
+        const exps = recs.filter((r) => r.type === 'expense');
+        const inc = pts.reduce((s, r) => s + Number(r.amount || 0), 0);
+        const exp = exps.reduce((s, r) => s + Number(r.amount || 0), 0);
+        const net = inc - exp;
+
+        const isCurrent = ym === app.currentMonth;
+        const badgeHtml = isCurrent
+          ? `<span class="tag-period current">Bulan Ini</span>`
+          : `<span class="tag-period">Bulan Lalu / Arsip</span>`;
+
+        const tr = document.createElement('tr');
+        if (ym === app.selectedMonth) tr.className = 'active-month-row';
+        tr.innerHTML = `
+          <td><strong>${formatMonthIndo(ym)}</strong>${badgeHtml}</td>
+          <td>${pts.length} Orang</td>
+          <td class="text-income">${formatIDR(inc)}</td>
+          <td class="text-expense">${formatIDR(exp)}</td>
+          <td><strong class="${net >= 0 ? 'text-income' : 'text-expense'}">${formatIDR(net)}</strong></td>
+          <td><button type="button" class="btn-mini" data-ym="${ym}">Lihat Data</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    document.getElementById('archive-tbody').addEventListener('click', (e) => {
+      if (e.target.classList.contains('btn-mini')) {
+        app.selectedMonth = e.target.dataset.ym;
+        document.getElementById('month-selector').value = app.selectedMonth;
+        renderAdmin();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    // Inisialisasi Tanggal & Bulan
+    const todayISO = new Date().toISOString().slice(0, 10);
+    document.getElementById('inc-date').value = todayISO;
+    document.getElementById('exp-date').value = todayISO;
+
+    const monthSelector = document.getElementById('month-selector');
+    monthSelector.value = app.selectedMonth;
+    monthSelector.addEventListener('change', (e) => {
+      if (e.target.value) {
+        app.selectedMonth = e.target.value;
+        renderAdmin();
+      }
+    });
+
+    // Pergantian Formulir Pasien vs Pengeluaran
+    const tabIncome = document.getElementById('tab-income');
+    const tabExpense = document.getElementById('tab-expense');
+    const formIncome = document.getElementById('form-income');
+    const formExpense = document.getElementById('form-expense');
+
+    tabIncome.addEventListener('click', () => {
+      tabIncome.className = 'tab-btn active-income';
+      tabExpense.className = 'tab-btn';
+      formIncome.style.display = 'block';
+      formExpense.style.display = 'none';
+    });
+
+    tabExpense.addEventListener('click', () => {
+      tabExpense.className = 'tab-btn active-expense';
+      tabIncome.className = 'tab-btn';
+      formExpense.style.display = 'block';
+      formIncome.style.display = 'none';
+    });
+
+    // Simpan Pasien Manual (Minimal Tarif Rp 10.000)
+    formIncome.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const amountVal = parseRupiahValue(document.getElementById('inc-amount').value);
+      if (amountVal < 10000) {
+        WhatsAppStyleNotifier.showTopBanner('Tarif Belum Sesuai', 'Tarif periksa minimal Rp 10.000 ke atas.');
+        return;
+      }
+      const dateVal = document.getElementById('inc-date').value;
+      const patientName = document.getElementById('inc-patient').value.trim();
+      const serviceVal = document.getElementById('inc-service').value;
+
+      app.records.unshift({
+        id: Date.now(),
+        type: 'income',
+        patientName,
+        patientAge: document.getElementById('inc-age').value.trim(),
+        service: serviceVal,
+        amount: amountVal,
+        paymentMethod: document.getElementById('inc-method').value,
+        date: dateVal
+      });
+
+      app.selectedMonth = dateVal.slice(0, 7);
+      monthSelector.value = app.selectedMonth;
+      app.pushNotification(
+        'Pemasukan Pasien Dicatat',
+        `${patientName} — ${serviceVal} (${formatIDR(amountVal)})`,
+        true
+      );
+
+      document.getElementById('inc-patient').value = '';
+      document.getElementById('inc-age').value = '';
+      document.getElementById('inc-amount').value = '';
+      renderAdmin();
+    });
+
+    // Simpan Pengeluaran Obat / Alkes
+    formExpense.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const amountVal = parseRupiahValue(document.getElementById('exp-amount').value);
+      if (amountVal <= 0) {
+        WhatsAppStyleNotifier.showTopBanner('Nominal Kosong', 'Masukkan nominal pembelanjaan terlebih dahulu.');
+        return;
+      }
+      const dateVal = document.getElementById('exp-date').value;
+      const titleVal = document.getElementById('exp-title').value.trim();
+      const catVal = document.getElementById('exp-category').value;
+
+      app.records.unshift({
+        id: Date.now(),
+        type: 'expense',
+        title: titleVal,
+        category: catVal,
+        amount: amountVal,
+        date: dateVal
+      });
+
+      app.selectedMonth = dateVal.slice(0, 7);
+      monthSelector.value = app.selectedMonth;
+      app.pushNotification(
+        `Pengeluaran (${catVal})`,
+        `${titleVal} sebesar ${formatIDR(amountVal)}`,
+        true
+      );
+
+      document.getElementById('exp-title').value = '';
+      document.getElementById('exp-amount').value = '';
+      renderAdmin();
+    });
+
+    // Ubah & Hapus Transaksi
+    const editTxModal = document.getElementById('edit-tx-modal');
+    document.getElementById('tx-list').addEventListener('click', (e) => {
+      const id = Number(e.target.dataset.id);
+      if (!id) return;
+
+      if (e.target.classList.contains('del')) {
+        if (confirm('Yakin ingin menghapus catatan ini secara permanen?')) {
+          app.records = app.records.filter((r) => r.id !== id);
+          app.saveAll();
+          renderAdmin();
+          WhatsAppStyleNotifier.showTopBanner('Catatan Dihapus', 'Data transaksi berhasil dihapus dari sistem.');
+        }
+      }
+
+      if (e.target.classList.contains('edit')) {
+        const item = app.records.find((r) => r.id === id);
+        if (!item) return;
+        const isInc = item.type === 'income';
+        document.getElementById('edit-tx-id').value = item.id;
+        document.getElementById('edit-tx-type').value = item.type;
+        document.getElementById('edit-tx-name-label').textContent = isInc ? 'Nama Pasien *' : 'Rincian Pengeluaran *';
+        document.getElementById('edit-tx-name').value = isInc ? item.patientName : item.title;
+        document.getElementById('edit-tx-age-group').style.display = isInc ? 'block' : 'none';
+        document.getElementById('edit-tx-age').value = item.patientAge || '';
+        document.getElementById('edit-tx-category').value = isInc ? item.service : item.category;
+        document.getElementById('edit-tx-amount').value = Number(item.amount).toLocaleString('id-ID');
+        document.getElementById('edit-tx-method-group').style.display = isInc ? 'block' : 'none';
+        document.getElementById('edit-tx-method').value = item.paymentMethod || 'Tunai';
+        document.getElementById('edit-tx-date').value = item.date;
+        editTxModal.classList.add('open');
+      }
+    });
+
+    document.getElementById('btn-close-edit-tx').addEventListener('click', () => editTxModal.classList.remove('open'));
+
+    document.getElementById('edit-tx-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const id = Number(document.getElementById('edit-tx-id').value);
+      const item = app.records.find((r) => r.id === id);
+      if (!item) return;
+
+      const newAmt = parseRupiahValue(document.getElementById('edit-tx-amount').value);
+      if (item.type === 'income' && newAmt < 10000) {
+        WhatsAppStyleNotifier.showTopBanner('Tarif Belum Sesuai', 'Tarif periksa minimal Rp 10.000.');
+        return;
+      }
+
+      if (item.type === 'income') {
+        item.patientName = document.getElementById('edit-tx-name').value.trim();
+        item.patientAge = document.getElementById('edit-tx-age').value.trim();
+        item.service = document.getElementById('edit-tx-category').value.trim();
+        item.paymentMethod = document.getElementById('edit-tx-method').value;
+      } else {
+        item.title = document.getElementById('edit-tx-name').value.trim();
+        item.category = document.getElementById('edit-tx-category').value.trim();
+      }
+      item.amount = newAmt;
+      item.date = document.getElementById('edit-tx-date').value;
+
+      app.saveAll();
+      editTxModal.classList.remove('open');
+      renderAdmin();
+      WhatsAppStyleNotifier.showTopBanner('Perubahan Tersimpan', 'Data catatan berhasil diperbarui.');
+    });
+
+    // Pencarian & Penyaringan
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      app.searchQuery = e.target.value;
+      renderAdmin();
+    });
+
+    document.getElementById('type-filter').addEventListener('change', (e) => {
+      app.typeFilter = e.target.value;
+      renderAdmin();
+    });
+
+    // Cetak & Unduh Excel (CSV)
+    document.getElementById('btn-print').addEventListener('click', () => window.print());
+
+    document.getElementById('btn-export-csv').addEventListener('click', () => {
+      const monthData = app.getMonthRecords();
+      if (monthData.length === 0) {
+        WhatsAppStyleNotifier.showTopBanner('Data Kosong', 'Tidak ada catatan pada bulan yang dipilih.');
+        return;
+      }
+      const headers = ['Tanggal', 'Jenis', 'Pasien / Keterangan', 'Tindakan / Kategori', 'Metode Bayar', 'Nominal (Rp)'];
+      const rows = monthData.map((r) => [
+        r.date,
+        r.type === 'income' ? 'Pemasukan' : 'Pengeluaran',
+        `"${(r.type === 'income' ? `${r.patientName} (${r.patientAge || '-'})` : r.title).replace(/"/g, '""')}"`,
+        `"${(r.type === 'income' ? r.service : r.category).replace(/"/g, '""')}"`,
+        r.paymentMethod || '-',
+        r.type === 'income' ? r.amount : -r.amount
+      ]);
+      const csv = '\uFEFF' + [headers.join(';'), ...rows.map((e) => e.join(';'))].join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Laporan-${app.config.nurseName.replace(/\s+/g, '-')}-${app.selectedMonth}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+      WhatsAppStyleNotifier.showTopBanner('Unduh Excel Selesai', 'File laporan CSV bulanan berhasil diunduh.');
+    });
+
+    // Cadangkan & Pulihkan Data
+    document.getElementById('btn-backup').addEventListener('click', () => {
+      const payload = { records: app.records, queue: app.queue, notifications: app.notifications };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Cadangan-Permanen-Fawaid-${todayISO}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      WhatsAppStyleNotifier.showTopBanner('Cadangan Berhasil', 'Seluruh data pasien & laporan berhasil dicadangkan.');
+    });
+
+    const fileRestore = document.getElementById('file-restore');
+    document.getElementById('btn-restore').addEventListener('click', () => fileRestore.click());
+    fileRestore.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        try {
+          const parsed = JSON.parse(ev.target.result);
+          if (Array.isArray(parsed)) {
+            app.records = parsed;
+          } else if (parsed && Array.isArray(parsed.records)) {
+            app.records = parsed.records;
+            if (Array.isArray(parsed.queue)) app.queue = parsed.queue;
+            if (Array.isArray(parsed.notifications)) app.notifications = parsed.notifications;
+          }
+          app.saveAll();
+          renderAdmin();
+          WhatsAppStyleNotifier.showTopBanner('Pemulihan Selesai', 'Data cadangan berhasil dipulihkan.');
+        } catch {
+          WhatsAppStyleNotifier.showTopBanner('Pemulihan Gagal', 'File cadangan tidak valid.');
+        }
+      };
+      reader.readAsText(file);
+      fileRestore.value = '';
+    });
+
+    // Ganti Tema
+    const savedTheme = localStorage.getItem('fawaid_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.getElementById('btn-theme').addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('fawaid_theme', next);
+    });
+
+    // Sinkronisasi Otomatis ke Firebase Tiap 3 Detik
+    syncPublicPortal();
+    app.syncCloudPull();
+    setInterval(() => {
+      app.syncCloudPull();
+    }, 3000);
+  </script>
+</body>
+</html>
